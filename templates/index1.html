@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Murmur Detection</title>
+    <link rel="stylesheet" href="/static/css/style1.css">
+</head>
+<body>
+<h1 class="header">Heart Murmur Detection</h1>
+<div class="container">
+
+    <div class="section">
+        <h1 style="text-align: center;">Welcome to the Heart Murmur Detection tool </h1>
+        <h2>About Heart Murmurs: </h2>
+        <h4>Heart murmurs are unusual sounds heard during a heartbeat. They’re often harmless but can sometimes indicate a serious heart condition. Early detection is crucial for effective treatment.</h4>
+        <h2>About the Project: </h2>
+        <h4>This project aims to use machine learning to detect heart murmurs from audio data. We’ve trained models that can identify the presence of a murmur with high accuracy.</h4>
+        <h2>My Methodology: </h2>
+        <h4>I’ve used several machine learning models, including Support Vector Machines (SVM), AdaBoost, and a Deep Neural Network. These models were trained and tested on a dataset of heart sounds.</h4>
+        <h2>Results:</h2>
+        <h4>Our models have achieved promising results, with accuracy rates above 98%. We’re continuously working to improve these results and make the models even better.</h4>
+    </div>
+
+    <div class="section">
+
+        <h1 style="text-align: center;">How to Record</h1>
+
+        <h3 style="color: black;">When recording heart sounds using a smartphone, it’s important to follow these precautions to ensure the best quality recording:</h3>
+
+        <h2>Quiet Environment</h2>
+        <h4>Choose a quiet environment to minimize background noise.</h4>
+
+        <h4>Turn off any music or television, close the windows to block out street noise, and ask others to be quiet if necessary.</h4>
+
+        <h2>Proper Placement</h2>
+        <h4>Place the microphone of the phone on the chest, slightly to the left of the sternum (breastbone), like in the picture.</h4>
+
+        <h2>Steady Hold</h2>
+        <h4>Hold the phone steady during the recording to avoid any additional noise from movement. It might be helpful to rest your hand or arm on a table to keep it steady.</h4>
+
+        <h2>Avoid Touching the Microphone</h2>
+        <h4>Be careful not to touch or rub the microphone while recording as this can create additional noise.</h4>
+
+    </div>
+    <div style="background-color: transparent; text-align: center;" class="section">
+        <img src="/static/images/img.png">
+    </div>
+
+    <div class="section">
+
+        <h1 style="text-align: center;">How to Use</h1>
+
+        <h3 style="color: black;">Our heart murmur detection tool is designed to be user-friendly, Here’s how you can use it:</h3>
+
+        <h3 style="color: black;">Step 1:</h3><h4>Record your heart sound using the instructions provided above.</h4>
+
+        <h3 style="color: black;">Step 2:</h3><h4>Save the recording in a .wav format or any other format compatible with our tool. We’re using the librosa library which supports a variety of audio formats including .wav, .mp3, .flac, and others.</h4>
+
+        <h3 style="color: black;">Step 3:</h3><h4>Upload the audio file using the ‘Upload’ button on our website.</h4>
+
+        <h3 style="color: black;">Step 4:</h3><h4>Click on ‘Analyze’ to run the heart murmur detection algorithm.</h4>
+
+        <h3 style="color: black;">Step 5:</h3><h4>The results will be displayed on the screen. If a heart murmur is detected, please consult with a healthcare provider for further evaluation.</h4>
+    </div>
+    <div class="section">
+        <h2>Remember, this tool is intended for research purposes and is not a substitute for professional medical advice.</h2>
+    </div>
+
+</div>
+
+
+    
+    <form action="/secpage" method="GET" enctype="multipart/form-data">
+        <div class="button-container">
+            
+            <button id="analyzeButton" class="analysis-button">click to go to the next page</button>
+        </div>
+    </form>
+
+
+</div>
+
+
+</body>
+</html>

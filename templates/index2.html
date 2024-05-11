@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style2.css">
+</head>
+<body>
+    
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <div class="button-container">
+            <input name="fileUpload" type="file" id="fileUpload" class="file-input" accept="audio/*">
+            <label for="fileUpload" class="upload-label">Upload</label>
+            <button id="analyzeButton" class="analysis-button">Analyze</button>
+        </div>
+    </form>
+        <div id="warningMessage" class="hidden" style="text-align: center; font-weight: 400;"></div>
+        <div class="container">
+            {% if predicted_value is defined %}
+            {% if predicted_value == -1 %}
+            <p style="font-size: 20px; text-align: center; color: #000; font-weight: 700"><br><span style="color: #08a91b;"><b> Normal murmur absent</b></span></p>
+            {% elif predicted_value == 1 %}
+            <p style="font-size: 20px; text-align: center; color: #000; font-weight: 700"><br><span style="color: #ff0037;"><b> Abnormal murmur present</b></span></p>
+            {% else %}
+            <p style="font-size: 20px; text-align: center; color: red; font-weight: 700"><br>An error occurred during analysis. Please try again.</p>
+            {% endif %}
+            {% endif %}
+        </div>
+    
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('analyzeButton').addEventListener('click', function(event) {
+            var fileInput = document.getElementById('fileUpload');
+            var warningMessage = document.getElementById('warningMessage');
+
+            // Check if audio is recorded or file is uploaded
+            if (fileInput.files.length === 0) {
+                warningMessage.innerHTML = "Please upload a file before analyzing.";
+                warningMessage.classList.remove('hidden');
+                event.preventDefault();
+            } else {
+                warningMessage.classList.add('hidden');
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
